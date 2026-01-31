@@ -41,63 +41,63 @@
     <style>
         body { font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.4s ease; background-color: #f8fafc; color: #1e293b; }
         
-        /* Ajuste de Proporções: Fontes mais equilibradas */
         .hero-headline { 
-            font-size: clamp(2.2rem, 5vw, 4.2rem); 
+            font-size: clamp(2rem, 5vw, 4rem); 
             line-height: 1.1; 
             letter-spacing: -0.03em;
         }
 
-        /* Cores de Marca Refinadas */
         .brand-dark { background-color: #0F172A; }
         .text-accent { color: #2563eb; }
         .bg-accent { background-color: #2563eb; }
-        .hero-gradient { background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); }
-        .storm-blue-gradient { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); }
+        
+        /* Gradiente de fundo para dar cor */
+        .hero-bg { 
+            background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); 
+        }
 
-        /* Media Container: Alinhamento e Proporção da Foto */
+        /* Ajuste de Fotos: Sem fundo e alinhamento */
         .media-container { 
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 420px; /* Tamanho proporcional para não dominar a página */
+            max-width: 440px;
             margin: 0 auto;
         }
         .media-container img { 
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.12));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
         }
 
-        /* Cards e Botões */
         .glass-card { 
-            background: rgba(255, 255, 255, 0.7); 
-            backdrop-filter: blur(8px); 
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.6); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
         }
 
         .cta-btn {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 12px 24px -6px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
         }
         .cta-btn:hover {
             transform: translateY(-2px);
             filter: brightness(1.05);
-            box-shadow: 0 15px 30px -8px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4);
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
 
-        /* Ajustes Mobile Específicos */
-        @media (max-width: 768px) {
-            .hero-headline { font-size: 2.4rem !important; text-align: center; }
+        /* Mobile specific adjustments to ensure the "Order" requested */
+        @media (max-width: 1023px) {
+            .hero-headline { font-size: 2.2rem !important; text-align: center; }
             .hero-sub { text-align: center; }
             .hero-stars { justify-content: center; }
-            .media-container { max-width: 320px; margin-top: 1rem; margin-bottom: 1.5rem; }
+            .media-container { max-width: 340px; }
         }
     </style>
 </head>
@@ -105,7 +105,7 @@
 
     <div class="max-w-[1440px] mx-auto bg-white min-h-screen shadow-xl relative overflow-hidden lg:my-6 lg:rounded-[2rem]">
         
-        <!-- Header & Compliance Bar -->
+        <!-- 1. CABEÇALHO (Sticky) -->
         <header class="sticky top-0 z-50">
             <div class="bg-slate-900 py-2 border-b border-slate-800">
                 <div class="flex justify-center items-center px-4">
@@ -123,10 +123,11 @@
         </header>
 
         <!-- Main Hero Section -->
-        <main class="hero-gradient px-6 py-10 lg:px-16 lg:py-20">
-            <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+        <main class="hero-bg px-6 py-10 lg:px-16 lg:py-24">
+            <!-- Grid Container: Controla Desktop e Mobile -->
+            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                 
-                <!-- 1. TÍTULO (Mobile Order 1) -->
+                <!-- 2. TÍTULO (Mobile Order 1) -->
                 <div class="order-1 lg:col-span-12 xl:col-span-7 xl:col-start-6 space-y-4">
                     <div class="hero-stars flex items-center gap-2">
                         <div class="flex text-blue-600 text-[10px]">
@@ -135,28 +136,29 @@
                         <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Review</span>
                     </div>
 
-                    <h2 class="hero-headline font-black text-slate-900 uppercase">
-                        <span class="opacity-80" data-i18n="headline-1">Support Balance.</span><br>
+                    <h2 class="hero-headline font-black text-slate-900 uppercase tracking-tight">
+                        <span class="opacity-70" data-i18n="headline-1">Support Balance.</span><br>
                         <span class="text-accent" data-i18n="headline-2">Reclaim Focus.</span>
                     </h2>
                 </div>
 
-                <!-- 2. FOTO DO PRODUTO (Mobile Order 2) -->
-                <div class="order-2 lg:col-span-12 xl:col-span-5 xl:col-start-1 xl:row-start-1 flex justify-center">
+                <!-- 3. FOTO DO PRODUTO (Mobile Order 2 / Desktop Left) -->
+                <div class="order-2 lg:col-span-5 xl:col-span-5 xl:col-start-1 xl:row-start-1 flex justify-center">
                     <div class="media-container animate-fade">
                         <img id="main-img" src="images/stormhammer.png" alt="Storm Hammer Gummies">
                     </div>
                 </div>
 
-                <!-- 3. TEXTO E BOTÕES (Mobile Order 3) -->
-                <div class="order-3 lg:col-span-12 xl:col-span-7 xl:col-start-6 space-y-8">
+                <!-- 4. TEXTO E 5. BOTÃO (Mobile Order 3 & 4 / Desktop Right) -->
+                <div class="order-3 lg:col-span-7 xl:col-span-7 xl:col-start-6 space-y-8">
+                    <!-- Texto / Descrição -->
                     <div class="hero-sub space-y-6">
                         <p class="text-base lg:text-lg text-slate-600 font-medium leading-relaxed" data-i18n="hero-p">
                             <strong>Storm Hammer Gummies</strong> is a high-performance vitality formula engineered for modern men seeking sustained energy and mental clarity without synthetic fillers.
                         </p>
                         
-                        <!-- Pros/Cons Tighter Layout -->
-                        <div class="glass-card p-6 rounded-3xl grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Pros/Cons Card -->
+                        <div class="glass-card p-6 rounded-3xl grid grid-cols-1 sm:grid-cols-2 gap-6 border border-white/50">
                             <div class="space-y-3">
                                 <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest flex items-center gap-2">
                                     <i class="fas fa-check-circle text-green-500"></i> <span data-i18n="pros-title">Core Benefits</span>
@@ -186,6 +188,7 @@
                         </div>
                     </div>
 
+                    <!-- Botão e Trust Signs -->
                     <div class="space-y-4">
                         <button onclick="scrollToSelector()" class="cta-btn w-full bg-accent text-white py-5 lg:py-6 rounded-2xl font-bold text-base lg:text-lg uppercase tracking-[0.1em]" data-i18n="cta-main">
                             Verify Official Stock Availability
@@ -201,7 +204,7 @@
             </div>
         </main>
 
-        <!-- Divider Section with Color -->
+        <!-- Divider Colored Section -->
         <section class="brand-dark py-12 px-6 text-center text-white">
             <div class="max-w-4xl mx-auto space-y-2">
                 <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-wide" data-i18n="sec-color-title">Engineered for High Performance</h3>
@@ -210,42 +213,36 @@
         </section>
 
         <!-- Region Selector -->
-        <section id="region-selector" class="bg-slate-50 py-16 px-6 border-t border-slate-100">
+        <section id="region-selector" class="bg-slate-50 py-20 px-6 border-t border-slate-100">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <h3 class="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight" data-i18n="region-title">Logistics Center</h3>
                 <p class="text-slate-500 text-xs font-semibold" data-i18n="region-p">Select region to access local authorized fulfillment.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <!-- Ireland -->
                 <button onclick="goToOffer('IRELAND')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/ie.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="IE">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ie">Ireland</span>
                 </button>
-                <!-- USA -->
                 <button onclick="goToOffer('USA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/us.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="US">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-us">United States</span>
                 </button>
-                <!-- UK -->
                 <button onclick="goToOffer('UK')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="UK">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-uk">United Kingdom</span>
                 </button>
-                <!-- Canada -->
                 <button onclick="goToOffer('CANADA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/ca.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="CA">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ca">Canada</span>
                 </button>
-                <!-- Germany -->
                 <button onclick="goToOffer('GERMANY')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/de.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="DE">
-                    <span class="block font-black text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-de">Germany</span>
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-de">Germany</span>
                 </button>
-                <!-- Australia -->
                 <button onclick="goToOffer('AUSTRALIA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
                     <img src="https://flagcdn.com/w80/au.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="AU">
-                    <span class="block font-black text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-au">Australia</span>
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-au">Australia</span>
                 </button>
             </div>
         </section>
@@ -274,7 +271,7 @@
                     <p data-i18n="disclaimer-aff"><strong>AUTHORIZED DISTRIBUTOR DISCLOSURE:</strong> Independent review and authorized information center. Commission may be earned via referrals.</p>
                     <p data-i18n="disclaimer-med"><strong>MEDICAL DISCLAIMER:</strong> Not evaluated by local health authorities. Products are not drugs and not intended to diagnose or treat conditions.</p>
                     <div class="pt-6 border-t border-slate-100 uppercase font-bold text-slate-300">
-                        Haur B.V. • Amsterdam • hello@stormhammer.com
+                        Haur B.V. • John M. Keynesplein 1, 1066EP Amsterdam • hello@stormhammer.com
                     </div>
                 </div>
             </div>
@@ -303,7 +300,7 @@
     <script>
         const translations = {
             'en': {
-                'header-top': 'Independent Analysis & Consumer Information Center | Ireland',
+                'header-top': 'Independent Analysis & Information Portal | Ireland',
                 'sub-star': 'Verified Independent Review',
                 'headline-1': 'Support Balance.',
                 'headline-2': 'Reclaim Focus.',
@@ -389,7 +386,7 @@
         }
         function openModal(key) { 
             const modal = document.getElementById('modal'); const body = document.getElementById('modal-body'); 
-            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-6 text-xl text-white p-4 rounded-xl">${key}</h3><p>Legal and policy information regarding ${key}.</p>`;
+            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-6 text-xl text-white p-4 rounded-xl">${key}</h3><p>Legal information for ${key}.</p>`;
             modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; 
         }
         function closeModal() { const modal = document.getElementById('modal'); modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = 'auto'; }

@@ -41,22 +41,37 @@
     <style>
         body { font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.4s ease; background-color: #f8fafc; color: #1e293b; }
         
+        /* Sistema de Tipografia Padronizado */
         .hero-headline { 
-            font-size: clamp(2rem, 5vw, 4rem); 
+            font-size: clamp(1.75rem, 4vw, 3.5rem); 
             line-height: 1.1; 
-            letter-spacing: -0.03em;
+            letter-spacing: -0.04em;
+            font-weight: 900;
+        }
+        
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+
+        .body-text {
+            font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+            line-height: 1.6;
+            letter-spacing: -0.01em;
         }
 
         .brand-dark { background-color: #0F172A; }
         .text-accent { color: #2563eb; }
         .bg-accent { background-color: #2563eb; }
         
-        /* Gradiente de fundo para dar cor */
+        /* Cores e profundidade */
         .hero-bg { 
             background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); 
         }
 
-        /* Ajuste de Fotos: Sem fundo e alinhamento */
+        /* Ajuste de Foto do Produto */
         .media-container { 
             display: flex;
             justify-content: center;
@@ -69,7 +84,7 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
         }
 
         .glass-card { 
@@ -82,6 +97,7 @@
         .cta-btn {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+            letter-spacing: 0.05em;
         }
         .cta-btn:hover {
             transform: translateY(-2px);
@@ -92,12 +108,13 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
 
-        /* Mobile specific adjustments to ensure the "Order" requested */
+        /* Ajustes Mobile: Ordem e Tamanho da Foto */
         @media (max-width: 1023px) {
-            .hero-headline { font-size: 2.2rem !important; text-align: center; }
+            .hero-headline { text-align: center; }
             .hero-sub { text-align: center; }
             .hero-stars { justify-content: center; }
-            .media-container { max-width: 340px; }
+            /* Redução da foto em ~35% no mobile conforme solicitado */
+            .media-container { max-width: 210px; margin-top: 0.5rem; margin-bottom: 1rem; }
         }
     </style>
 </head>
@@ -108,8 +125,8 @@
         <!-- 1. CABEÇALHO (Sticky) -->
         <header class="sticky top-0 z-50">
             <div class="bg-slate-900 py-2 border-b border-slate-800">
-                <div class="flex justify-center items-center px-4">
-                    <span class="text-[9px] font-semibold tracking-[0.15em] text-slate-400 uppercase text-center" data-i18n="header-top">
+                <div class="flex justify-center items-center px-4 text-center">
+                    <span class="text-[9px] font-bold tracking-[0.12em] text-slate-400 uppercase" data-i18n="header-top">
                         Independent Analysis & Information Portal | Ireland
                     </span>
                 </div>
@@ -117,18 +134,18 @@
 
             <nav class="bg-white/95 backdrop-blur-md py-4 px-6 flex justify-center border-b border-slate-100">
                 <div class="cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-                    <img src="images/stormhammer-logo.png" alt="Storm Hammer" class="h-9 md:h-11 w-auto">
+                    <img src="images/stormhammer-logo.png" alt="Storm Hammer" class="h-8 md:h-10 w-auto">
                 </div>
             </nav>
         </header>
 
         <!-- Main Hero Section -->
-        <main class="hero-bg px-6 py-10 lg:px-16 lg:py-24">
+        <main class="hero-bg px-6 py-8 lg:px-16 lg:py-20">
             <!-- Grid Container: Controla Desktop e Mobile -->
-            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
+            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-6 lg:gap-16 max-w-6xl mx-auto">
                 
                 <!-- 2. TÍTULO (Mobile Order 1) -->
-                <div class="order-1 lg:col-span-12 xl:col-span-7 xl:col-start-6 space-y-4">
+                <div class="order-1 lg:col-span-12 xl:col-span-7 xl:col-start-6 space-y-3 lg:space-y-4">
                     <div class="hero-stars flex items-center gap-2">
                         <div class="flex text-blue-600 text-[10px]">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -136,8 +153,8 @@
                         <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Review</span>
                     </div>
 
-                    <h2 class="hero-headline font-black text-slate-900 uppercase tracking-tight">
-                        <span class="opacity-70" data-i18n="headline-1">Support Balance.</span><br>
+                    <h2 class="hero-headline text-slate-900 uppercase tracking-tighter">
+                        <span class="opacity-60" data-i18n="headline-1">Support Balance.</span><br>
                         <span class="text-accent" data-i18n="headline-2">Reclaim Focus.</span>
                     </h2>
                 </div>
@@ -150,37 +167,37 @@
                 </div>
 
                 <!-- 4. TEXTO E 5. BOTÃO (Mobile Order 3 & 4 / Desktop Right) -->
-                <div class="order-3 lg:col-span-7 xl:col-span-7 xl:col-start-6 space-y-8">
+                <div class="order-3 lg:col-span-7 xl:col-span-7 xl:col-start-6 space-y-6 lg:space-y-8">
                     <!-- Texto / Descrição -->
-                    <div class="hero-sub space-y-6">
-                        <p class="text-base lg:text-lg text-slate-600 font-medium leading-relaxed" data-i18n="hero-p">
+                    <div class="hero-sub space-y-5 lg:space-y-6">
+                        <p class="body-text text-slate-600 font-medium" data-i18n="hero-p">
                             <strong>Storm Hammer Gummies</strong> is a high-performance vitality formula engineered for modern men seeking sustained energy and mental clarity without synthetic fillers.
                         </p>
                         
                         <!-- Pros/Cons Card -->
-                        <div class="glass-card p-6 rounded-3xl grid grid-cols-1 sm:grid-cols-2 gap-6 border border-white/50">
-                            <div class="space-y-3">
-                                <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest flex items-center gap-2">
+                        <div class="glass-card p-5 lg:p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-5 border border-white/50">
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-wider flex items-center gap-2">
                                     <i class="fas fa-check-circle text-green-500"></i> <span data-i18n="pros-title">Core Benefits</span>
                                 </h4>
-                                <ul class="text-[11px] lg:text-xs text-slate-500 space-y-2">
+                                <ul class="text-[11px] lg:text-xs text-slate-500 space-y-1.5 font-medium">
                                     <li class="flex items-start gap-2">
-                                        <span class="mt-1 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
+                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
                                         <span data-i18n="pro-1">Premium daily gummy format</span>
                                     </li>
                                     <li class="flex items-start gap-2">
-                                        <span class="mt-1 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
+                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
                                         <span data-i18n="pro-2">100% natural botanical complex</span>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="space-y-3">
-                                <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest flex items-center gap-2">
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-wider flex items-center gap-2">
                                     <i class="fas fa-calendar-alt text-slate-400"></i> <span data-i18n="cons-title">Requirement</span>
                                 </h4>
-                                <ul class="text-[11px] lg:text-xs text-slate-500 space-y-2">
+                                <ul class="text-[11px] lg:text-xs text-slate-500 space-y-1.5 font-medium">
                                     <li class="flex items-start gap-2">
-                                        <span class="mt-1 w-1 h-1 rounded-full bg-slate-300 shrink-0"></span>
+                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-slate-300 shrink-0"></span>
                                         <span data-i18n="con-1">Consistent daily routine is vital</span>
                                     </li>
                                 </ul>
@@ -190,7 +207,7 @@
 
                     <!-- Botão e Trust Signs -->
                     <div class="space-y-4">
-                        <button onclick="scrollToSelector()" class="cta-btn w-full bg-accent text-white py-5 lg:py-6 rounded-2xl font-bold text-base lg:text-lg uppercase tracking-[0.1em]" data-i18n="cta-main">
+                        <button onclick="scrollToSelector()" class="cta-btn w-full bg-accent text-white py-4 lg:py-6 rounded-xl font-bold text-sm lg:text-base uppercase tracking-widest" data-i18n="cta-main">
                             Verify Official Stock Availability
                         </button>
                         
@@ -205,73 +222,74 @@
         </main>
 
         <!-- Divider Colored Section -->
-        <section class="brand-dark py-12 px-6 text-center text-white">
-            <div class="max-w-4xl mx-auto space-y-2">
-                <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-wide" data-i18n="sec-color-title">Engineered for High Performance</h3>
-                <p class="text-slate-400 text-xs lg:text-sm" data-i18n="sec-color-p">Navigating modern life with sustained focus and vitality.</p>
+        <section class="brand-dark py-10 px-6 text-center text-white">
+            <div class="max-w-4xl mx-auto space-y-1">
+                <h3 class="section-title uppercase" data-i18n="sec-color-title">Engineered for High Performance</h3>
+                <p class="text-slate-400 text-xs lg:text-sm font-medium tracking-wide" data-i18n="sec-color-p">Navigating modern life with sustained focus and vitality.</p>
             </div>
         </section>
 
         <!-- Region Selector -->
-        <section id="region-selector" class="bg-slate-50 py-20 px-6 border-t border-slate-100">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h3 class="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight" data-i18n="region-title">Logistics Center</h3>
-                <p class="text-slate-500 text-xs font-semibold" data-i18n="region-p">Select region to access local authorized fulfillment.</p>
+        <section id="region-selector" class="bg-slate-50 py-16 px-6 border-t border-slate-100">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h3 class="section-title text-slate-900 mb-2 uppercase" data-i18n="region-title">Logistics Center</h3>
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest" data-i18n="region-p">Select region for local fulfillment.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <button onclick="goToOffer('IRELAND')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/ie.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="IE">
+                <!-- Países -->
+                <button onclick="goToOffer('IRELAND')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/ie.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="IE">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ie">Ireland</span>
                 </button>
-                <button onclick="goToOffer('USA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/us.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="US">
+                <button onclick="goToOffer('USA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/us.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="US">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-us">United States</span>
                 </button>
-                <button onclick="goToOffer('UK')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="UK">
+                <button onclick="goToOffer('UK')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="UK">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-uk">United Kingdom</span>
                 </button>
-                <button onclick="goToOffer('CANADA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/ca.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="CA">
+                <button onclick="goToOffer('CANADA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/ca.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="CA">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ca">Canada</span>
                 </button>
-                <button onclick="goToOffer('GERMANY')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/de.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="DE">
+                <button onclick="goToOffer('GERMANY')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/de.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="DE">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-de">Germany</span>
                 </button>
-                <button onclick="goToOffer('AUSTRALIA')" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/au.png" class="w-10 mx-auto mb-3 rounded shadow-sm opacity-80 group-hover:opacity-100" alt="AU">
+                <button onclick="goToOffer('AUSTRALIA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                    <img src="https://flagcdn.com/w80/au.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="AU">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-au">Australia</span>
                 </button>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-white px-6 py-16 border-t border-slate-100 text-center">
-            <div class="max-w-4xl mx-auto space-y-10">
+        <footer class="bg-white px-6 py-12 border-t border-slate-100 text-center">
+            <div class="max-w-4xl mx-auto space-y-8">
                 
                 <div class="flex flex-col items-center gap-4">
                     <img src="images/stormhammer-logo.png" alt="Storm Hammer" class="h-8 w-auto grayscale opacity-40">
                     
-                    <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 w-full max-w-lg">
-                        <h5 class="font-bold text-slate-900 text-xs uppercase tracking-widest mb-2" data-i18n="footer-team">Independent Editorial Review</h5>
-                        <p class="text-[10px] text-slate-400 leading-relaxed" data-i18n="footer-team-p">Curated by our independent health panel to provide evidence-based insights into vitality support.</p>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 w-full max-w-lg">
+                        <h5 class="font-bold text-slate-900 text-[10px] uppercase tracking-widest mb-1" data-i18n="footer-team">Independent Editorial Review</h5>
+                        <p class="text-[10px] text-slate-400 leading-relaxed font-medium" data-i18n="footer-team-p">Curated by our independent health panel to provide evidence-based insights into vitality support.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
                     <button onclick="openModal('privacy')" class="hover:text-accent" data-i18n="link-privacy">Privacy Policy</button>
                     <button onclick="openModal('terms')" class="hover:text-accent" data-i18n="link-terms">Terms of Service</button>
                     <button onclick="openModal('shipping')" class="hover:text-accent" data-i18n="link-shipping">Shipping</button>
                     <button onclick="openModal('contact')" class="hover:text-accent" data-i18n="link-contact">Contact</button>
                 </div>
 
-                <div class="text-[9px] text-slate-400 space-y-4 max-w-2xl mx-auto opacity-70">
+                <div class="text-[9px] text-slate-400 space-y-3 max-w-2xl mx-auto opacity-70 font-medium">
                     <p data-i18n="disclaimer-aff"><strong>AUTHORIZED DISTRIBUTOR DISCLOSURE:</strong> Independent review and authorized information center. Commission may be earned via referrals.</p>
                     <p data-i18n="disclaimer-med"><strong>MEDICAL DISCLAIMER:</strong> Not evaluated by local health authorities. Products are not drugs and not intended to diagnose or treat conditions.</p>
-                    <div class="pt-6 border-t border-slate-100 uppercase font-bold text-slate-300">
-                        Haur B.V. • John M. Keynesplein 1, 1066EP Amsterdam • hello@stormhammer.com
+                    <div class="pt-4 border-t border-slate-100 uppercase text-slate-300 font-bold">
+                        Haur B.V. • Amsterdam • hello@stormhammer.com
                     </div>
                 </div>
             </div>
@@ -281,10 +299,10 @@
     <!-- Modals -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4">
         <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="bg-white w-full max-w-2xl max-h-[80vh] rounded-[2rem] relative z-10 flex flex-col shadow-2xl animate-fade">
+        <div class="bg-white w-full max-w-2xl max-h-[80vh] rounded-[1.5rem] relative z-10 flex flex-col shadow-2xl animate-fade">
             <div class="p-8 overflow-y-auto text-[11px] leading-relaxed text-slate-600" id="modal-body"></div>
-            <div class="p-5 border-t bg-slate-50 rounded-b-[2rem] flex justify-end">
-                <button onclick="closeModal()" class="bg-slate-900 text-white px-8 py-2 rounded-xl font-bold text-xs uppercase" data-i18n="modal-close">Close</button>
+            <div class="p-4 border-t bg-slate-50 rounded-b-[1.5rem] flex justify-end">
+                <button onclick="closeModal()" class="bg-slate-900 text-white px-6 py-2 rounded-lg font-bold text-[10px] uppercase" data-i18n="modal-close">Close</button>
             </div>
         </div>
     </div>
@@ -293,7 +311,7 @@
     <div id="custom-alert" class="fixed top-6 left-1/2 -translate-x-1/2 z-[200] hidden">
         <div class="bg-slate-900 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 animate-fade border border-blue-500/40">
             <i class="fas fa-bolt text-blue-400 text-xs"></i>
-            <span id="alert-msg" class="font-bold text-[11px] tracking-wide"></span>
+            <span id="alert-msg" class="font-bold text-[10px] tracking-wide"></span>
         </div>
     </div>
 
@@ -316,7 +334,7 @@
                 'sec-color-title': 'Engineered for High Performance',
                 'sec-color-p': 'Navigating modern life with sustained focus and vitality.',
                 'region-title': 'Logistics Center',
-                'region-p': 'Select region to access local authorized fulfillment.',
+                'region-p': 'Select region for local fulfillment.',
                 'country-ie': 'Ireland', 'country-us': 'United States', 'country-uk': 'United Kingdom', 'country-ca': 'Canada', 'country-de': 'Germany', 'country-au': 'Australia',
                 'footer-team': 'Independent Editorial Review',
                 'footer-team-p': 'Curated by our independent health panel to provide evidence-based insights.',
@@ -326,25 +344,19 @@
                 'modal-close': 'Close', 'alert-redir': 'Connecting to Authorized Store...'
             },
             'de': {
-                'header-top': 'Unabhängiges Analyse- & Informationszentrum | Irland',
+                'header-top': 'Unabhängiges Analyse- & Informationsportal | Irland',
                 'sub-star': 'Verifizierte unabhängige Bewertung',
                 'headline-1': 'Gleichgewicht stärken.',
                 'headline-2': 'Fokus zurückgewinnen.',
                 'hero-p': '<strong>Storm Hammer Gummies</strong> ist eine Hochleistungs-Vitalitätsformel für Männer, die Energie und Klarheit suchen.',
-                'pros-title': 'Hauptvorteile',
-                'pro-1': 'Hochwertiges Gummiformat',
-                'pro-2': '100% natürlicher Komplex',
-                'cons-title': 'Anforderung',
-                'con-1': 'Tägliche Routine ist entscheidend',
                 'cta-main': 'Offizielle Verfügbarkeit prüfen',
                 'alert-redir': 'Verbindung zum autorisierten Shop wird hergestellt...'
             },
             'ga': {
                 'header-top': 'Lárionad Faisnéise & Léirmheasa | Éire',
-                'sub-star': 'Léirmheas Neamhspleách Dearbhaithe',
+                'sub-star': 'Anailís Neamhspleách Dearbhaithe',
                 'headline-1': 'Tacú le Cothromaíocht.',
                 'headline-2': 'Fócas a Athghabháil.',
-                'hero-p': 'Is foirmle nua-aimseartha é <strong>Storm Hammer Gummies</strong> atá deartha chun fuinneamh a mhéadú.',
                 'cta-main': 'Seiceáil Stoc Oifigiúil',
                 'alert-redir': 'Ag nascadh leis an siopa...'
             }
@@ -386,7 +398,7 @@
         }
         function openModal(key) { 
             const modal = document.getElementById('modal'); const body = document.getElementById('modal-body'); 
-            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-6 text-xl text-white p-4 rounded-xl">${key}</h3><p>Legal information for ${key}.</p>`;
+            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-4 text-sm text-white p-3 rounded-lg">${key}</h3><p>Legal information for ${key}.</p>`;
             modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; 
         }
         function closeModal() { const modal = document.getElementById('modal'); modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = 'auto'; }

@@ -73,7 +73,7 @@
         /* Highlight para a Data */
         .date-highlight { color: #60A5FA; font-weight: 800; }
 
-        /* Cookie Banner - Melhoria Mobile */
+        /* Cookie Banner */
         #cookie-banner { 
             position: fixed; 
             bottom: 15px; 
@@ -100,7 +100,7 @@
             .hero-sub { text-align: center; }
             .hero-stars { justify-content: center; }
             /* Foto reduzida em ~35% */
-            .media-container { max-width: 210px !important; margin: 0.5rem auto 1rem auto; }
+            .media-container { max-width: 210px !important; margin: 1rem auto; }
         }
     </style>
 </head>
@@ -110,7 +110,7 @@
     <div id="cookie-banner">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
             <p class="text-[11px] leading-relaxed opacity-90" data-i18n="cookie-text">
-                We use cookies in accordance with regulations to improve your experience.
+                We use cookies to enhance your experience in accordance with regulations.
             </p>
             <div class="flex gap-2 shrink-0 w-full md:w-auto">
                 <button onclick="acceptCookies()" class="bg-blue-600 px-5 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest transition hover:bg-blue-700">Accept</button>
@@ -150,7 +150,7 @@
                             <div class="flex text-blue-600 text-[10px]">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Analysis</span>
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Review</span>
                         </div>
 
                         <h2 class="hero-headline text-slate-900 uppercase tracking-tighter">
@@ -195,7 +195,7 @@
 
                     <!-- BOTÃO (Ordem 4) -->
                     <div class="space-y-4">
-                        <button onclick="scrollToSelector()" class="cta-btn w-full bg-accent text-white py-4 lg:py-6 rounded-xl font-bold text-sm lg:text-base uppercase tracking-widest" data-i18n="cta-main">
+                        <button onclick="goToSelector()" class="cta-btn w-full bg-accent text-white py-4 lg:py-6 rounded-xl font-bold text-sm lg:text-base uppercase tracking-widest" data-i18n="cta-main">
                             Verify Official Stock Availability
                         </button>
                         
@@ -232,27 +232,33 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <button onclick="goToOffer('IRELAND')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- IRLANDA -->
+                <button onclick="goToOffer('IRELAND')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/ie.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="IE">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-ie">Ireland</span>
                 </button>
-                <button onclick="goToOffer('USA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- USA -->
+                <button onclick="goToOffer('USA')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/us.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="US">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-us">United States</span>
                 </button>
-                <button onclick="goToOffer('UK')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- UK -->
+                <button onclick="goToOffer('UK')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="UK">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-uk">United Kingdom</span>
                 </button>
-                <button onclick="goToOffer('CANADA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- CANADA -->
+                <button onclick="goToOffer('CANADA')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/ca.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="CA">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-ca">Canada</span>
                 </button>
-                <button onclick="goToOffer('GERMANY')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- GERMANY -->
+                <button onclick="goToOffer('GERMANY')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/de.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="DE">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-de">Germany</span>
                 </button>
-                <button onclick="goToOffer('AUSTRALIA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
+                <!-- AUSTRALIA -->
+                <button onclick="goToOffer('AUSTRALIA')" class="p-5 bg-white rounded-2xl border-2 border-slate-300 hover:border-blue-500 transition-all text-center group shadow-sm">
                     <img src="https://flagcdn.com/w80/au.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="AU">
                     <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-au">Australia</span>
                 </button>
@@ -308,7 +314,7 @@
     </div>
 
     <script>
-        // Shipping Date Logic
+        // Dynamic Shipping Date
         function getNextBusinessDay() {
             const today = new Date();
             let nextDay = new Date(today);
@@ -338,7 +344,7 @@
             'en': {
                 'cookie-text': 'We use cookies in accordance with regulations.',
                 'header-top-text': 'Shipping starting on',
-                'sub-star': 'Verified Independent Analysis',
+                'sub-star': 'Verified Independent Review',
                 'headline-1': 'Support Balance.',
                 'headline-2': 'Reclaim Focus.',
                 'hero-p': '<strong>Storm Hammer Gummies</strong> is a high-performance vitality formula engineered for modern men seeking sustained energy and mental clarity without synthetic fillers.',
@@ -371,7 +377,7 @@
             'ga': {
                 'cookie-text': 'Úsáidimid fianáin de réir rialacháin.',
                 'header-top-text': 'Seoladh ag tosú ar',
-                'sub-star': 'Anailís Neamhspleách Dearbhaithe',
+                'sub-star': 'Léirmheas Neamhspleách Dearbhaithe',
                 'headline-1': 'Tacú le Cothromaíocht.',
                 'headline-2': 'Fócas a Athghabháil.',
                 'cta-main': 'Seiceáil Stoc Oifigiúil',
@@ -401,7 +407,7 @@
             'AUSTRALIA': 'https://www.knownwalk.com/2J9RKGKC/21HFK9CD/'
         };
 
-        function scrollToSelector() { document.getElementById('region-selector').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        function goToSelector() { document.getElementById('region-selector').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         function showAlert(msg) { 
             const el = document.getElementById('custom-alert'); const txt = document.getElementById('alert-msg'); 
             txt.innerText = msg; el.classList.remove('hidden'); setTimeout(() => el.classList.add('hidden'), 3000); 

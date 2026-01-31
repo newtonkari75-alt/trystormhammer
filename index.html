@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="images/favcon.png">
 
     <title>Storm Hammer Gummies Review | Professional Vitality Insights</title>
-    <meta name="description" content="Independent review of Storm Hammer Gummies. Premium male vitality support. Authorized distribution for IE, US, UK, CA, DE, & AU.">
+    <meta name="description" content="Independent review of Storm Hammer Gummies. Premium male vitality support. Authorized distribution center.">
     
     <link rel="canonical" href="https://trystormhammer.vercel.app/">
     <link rel="alternate" href="https://trystormhammer.vercel.app/" hreflang="x-default">
@@ -41,93 +41,63 @@
     <style>
         body { font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.4s ease; background-color: #f8fafc; color: #1e293b; }
         
-        /* Sistema de Tipografia Padronizado */
-        .hero-headline { 
-            font-size: clamp(1.75rem, 4vw, 3.5rem); 
-            line-height: 1.1; 
-            letter-spacing: -0.04em;
-            font-weight: 900;
-        }
-        
-        .section-title {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            font-weight: 800;
-        }
+        /* Tipografia Padronizada */
+        .hero-headline { font-size: clamp(1.8rem, 4.5vw, 3.8rem); line-height: 1.1; letter-spacing: -0.04em; font-weight: 900; }
+        .section-title { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 800; }
+        .body-text { font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.6; }
 
-        .body-text {
-            font-size: clamp(0.95rem, 1.5vw, 1.125rem);
-            line-height: 1.6;
-            letter-spacing: -0.01em;
-        }
-
+        /* Cores e Fundo */
         .brand-dark { background-color: #0F172A; }
         .text-accent { color: #2563eb; }
         .bg-accent { background-color: #2563eb; }
-        
-        /* Cores e profundidade */
-        .hero-bg { 
-            background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); 
-        }
+        .hero-bg { background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); }
 
-        /* Ajuste de Foto do Produto */
-        .media-container { 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            max-width: 440px;
-            margin: 0 auto;
-        }
-        .media-container img { 
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
-        }
+        /* Alinhamento de Foto */
+        .media-container { display: flex; justify-content: center; align-items: center; width: 100%; max-width: 440px; margin: 0 auto; }
+        .media-container img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1)); }
 
-        .glass-card { 
-            background: rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(10px); 
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-        }
+        /* Componentes Premium */
+        .glass-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
+        .cta-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3); }
+        .cta-btn:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4); }
 
-        .cta-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
-            letter-spacing: 0.05em;
-        }
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.05);
-            box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4);
-        }
+        /* Highlight para a Data */
+        .date-highlight { color: #60A5FA; font-weight: 800; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+        /* Cookie Banner */
+        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; z-index: 9999; background: #0F172A; color: white; padding: 20px; border-radius: 16px; display: none; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 
-        /* Ajustes Mobile: Ordem e Tamanho da Foto */
         @media (max-width: 1023px) {
             .hero-headline { text-align: center; }
             .hero-sub { text-align: center; }
             .hero-stars { justify-content: center; }
-            /* Redução da foto em ~35% no mobile conforme solicitado */
-            .media-container { max-width: 210px; margin-top: 0.5rem; margin-bottom: 1rem; }
+            .media-container { max-width: 210px !important; margin: 1rem auto; }
         }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-[11px] leading-relaxed opacity-80" data-i18n="cookie-text">
+                We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies in accordance with regulations.
+            </p>
+            <div class="flex gap-3 shrink-0">
+                <button onclick="acceptCookies()" class="bg-blue-600 px-6 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest">Accept</button>
+            </div>
+        </div>
+    </div>
+
     <div class="max-w-[1440px] mx-auto bg-white min-h-screen shadow-xl relative overflow-hidden lg:my-6 lg:rounded-[2rem]">
         
-        <!-- 1. CABEÇALHO (Sticky) -->
+        <!-- 1. CABEÇALHO -->
         <header class="sticky top-0 z-50">
             <div class="bg-slate-900 py-2 border-b border-slate-800">
                 <div class="flex justify-center items-center px-4 text-center">
-                    <span class="text-[9px] font-bold tracking-[0.12em] text-slate-400 uppercase" data-i18n="header-top">
-                        Independent Analysis & Information Portal | Ireland
+                    <span class="text-[9px] font-bold tracking-[0.12em] text-slate-400 uppercase">
+                        <span data-i18n="header-top-text">Shipping starting on</span> 
+                        <span id="shipping-date" class="date-highlight"></span>
                     </span>
                 </div>
             </div>
@@ -140,72 +110,60 @@
         </header>
 
         <!-- Main Hero Section -->
-        <main class="hero-bg px-6 py-8 lg:px-16 lg:py-20">
-            <!-- Grid Container: Controla Desktop e Mobile -->
-            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-6 lg:gap-16 max-w-6xl mx-auto">
+        <main class="hero-bg px-6 py-8 lg:px-16 lg:py-24">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                 
-                <!-- 2. TÍTULO (Mobile Order 1) -->
-                <div class="order-1 lg:col-span-12 xl:col-span-7 xl:col-start-6 space-y-3 lg:space-y-4">
-                    <div class="hero-stars flex items-center gap-2">
-                        <div class="flex text-blue-600 text-[10px]">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <!-- MOBILE: TÍTULO -->
+                <div class="order-1 lg:order-2 flex flex-col justify-center space-y-6">
+                    <div class="space-y-4">
+                        <div class="hero-stars flex items-center gap-2">
+                            <div class="flex text-blue-600 text-[10px]">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Review</span>
                         </div>
-                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="sub-star">Verified Independent Review</span>
+
+                        <h2 class="hero-headline text-slate-900 uppercase tracking-tighter">
+                            <span class="opacity-60" data-i18n="headline-1">Support Balance.</span><br>
+                            <span class="text-accent" data-i18n="headline-2">Reclaim Focus.</span>
+                        </h2>
                     </div>
 
-                    <h2 class="hero-headline text-slate-900 uppercase tracking-tighter">
-                        <span class="opacity-60" data-i18n="headline-1">Support Balance.</span><br>
-                        <span class="text-accent" data-i18n="headline-2">Reclaim Focus.</span>
-                    </h2>
-                </div>
-
-                <!-- 3. FOTO DO PRODUTO (Mobile Order 2 / Desktop Left) -->
-                <div class="order-2 lg:col-span-5 xl:col-span-5 xl:col-start-1 xl:row-start-1 flex justify-center">
-                    <div class="media-container animate-fade">
-                        <img id="main-img" src="images/stormhammer.png" alt="Storm Hammer Gummies">
+                    <!-- MOBILE: FOTO -->
+                    <div class="lg:hidden">
+                        <div class="media-container animate-fade">
+                            <img id="main-img-mobile" src="images/stormhammer.png" alt="Storm Hammer Gummies">
+                        </div>
                     </div>
-                </div>
 
-                <!-- 4. TEXTO E 5. BOTÃO (Mobile Order 3 & 4 / Desktop Right) -->
-                <div class="order-3 lg:col-span-7 xl:col-span-7 xl:col-start-6 space-y-6 lg:space-y-8">
-                    <!-- Texto / Descrição -->
-                    <div class="hero-sub space-y-5 lg:space-y-6">
+                    <!-- TEXTO -->
+                    <div class="hero-sub space-y-6">
                         <p class="body-text text-slate-600 font-medium" data-i18n="hero-p">
                             <strong>Storm Hammer Gummies</strong> is a high-performance vitality formula engineered for modern men seeking sustained energy and mental clarity without synthetic fillers.
                         </p>
                         
-                        <!-- Pros/Cons Card -->
-                        <div class="glass-card p-5 lg:p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-5 border border-white/50">
+                        <div class="glass-card p-5 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-5 border border-white/50">
                             <div class="space-y-2">
                                 <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-wider flex items-center gap-2">
                                     <i class="fas fa-check-circle text-green-500"></i> <span data-i18n="pros-title">Core Benefits</span>
                                 </h4>
                                 <ul class="text-[11px] lg:text-xs text-slate-500 space-y-1.5 font-medium">
-                                    <li class="flex items-start gap-2">
-                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
-                                        <span data-i18n="pro-1">Premium daily gummy format</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
-                                        <span data-i18n="pro-2">100% natural botanical complex</span>
-                                    </li>
+                                    <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span> <span data-i18n="pro-1">Premium daily gummy format</span></li>
+                                    <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span> <span data-i18n="pro-2">100% natural botanical complex</span></li>
                                 </ul>
                             </div>
-                            <div class="space-y-2">
+                            <div class="space-y-2 lg:border-l lg:border-slate-200 lg:pl-5">
                                 <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-wider flex items-center gap-2">
                                     <i class="fas fa-calendar-alt text-slate-400"></i> <span data-i18n="cons-title">Requirement</span>
                                 </h4>
                                 <ul class="text-[11px] lg:text-xs text-slate-500 space-y-1.5 font-medium">
-                                    <li class="flex items-start gap-2">
-                                        <span class="mt-1.5 w-1 h-1 rounded-full bg-slate-300 shrink-0"></span>
-                                        <span data-i18n="con-1">Consistent daily routine is vital</span>
-                                    </li>
+                                    <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-slate-300 shrink-0"></span> <span data-i18n="con-1">Consistent daily routine is vital</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Botão e Trust Signs -->
+                    <!-- BOTÃO -->
                     <div class="space-y-4">
                         <button onclick="scrollToSelector()" class="cta-btn w-full bg-accent text-white py-4 lg:py-6 rounded-xl font-bold text-sm lg:text-base uppercase tracking-widest" data-i18n="cta-main">
                             Verify Official Stock Availability
@@ -213,19 +171,26 @@
                         
                         <div class="flex justify-center items-center gap-6 text-[9px] text-slate-400 font-bold uppercase tracking-widest">
                             <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> <span data-i18n="lock">Secure Transaction</span></span>
-                            <span class="flex items-center gap-1.5"><i class="fas fa-truck"></i> <span data-i18n="shield">Ireland Delivery</span></span>
+                            <span class="flex items-center gap-1.5"><i class="fas fa-truck"></i> <span data-i18n="shield">Express Delivery</span></span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- DESKTOP: FOTO -->
+                <div class="hidden lg:flex order-2 lg:order-1 justify-center">
+                    <div class="media-container animate-fade">
+                        <img id="main-img-desktop" src="images/stormhammer.png" alt="Storm Hammer Gummies">
                     </div>
                 </div>
 
             </div>
         </main>
 
-        <!-- Divider Colored Section -->
+        <!-- Divider -->
         <section class="brand-dark py-10 px-6 text-center text-white">
             <div class="max-w-4xl mx-auto space-y-1">
-                <h3 class="section-title uppercase" data-i18n="sec-color-title">Engineered for High Performance</h3>
-                <p class="text-slate-400 text-xs lg:text-sm font-medium tracking-wide" data-i18n="sec-color-p">Navigating modern life with sustained focus and vitality.</p>
+                <h3 class="section-title uppercase mb-1" data-i18n="sec-color-title">Engineered for High Performance</h3>
+                <p class="text-slate-400 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em]" data-i18n="sec-color-p">Sustained focus & Natural vitality support.</p>
             </div>
         </section>
 
@@ -233,34 +198,33 @@
         <section id="region-selector" class="bg-slate-50 py-16 px-6 border-t border-slate-100">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h3 class="section-title text-slate-900 mb-2 uppercase" data-i18n="region-title">Logistics Center</h3>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest" data-i18n="region-p">Select region for local fulfillment.</p>
+                <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest" data-i18n="region-p">Select region for local fulfillment.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <!-- Países -->
                 <button onclick="goToOffer('IRELAND')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/ie.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="IE">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ie">Ireland</span>
+                    <img src="https://flagcdn.com/w80/ie.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="IE">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-ie">Ireland</span>
                 </button>
                 <button onclick="goToOffer('USA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/us.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="US">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-us">United States</span>
+                    <img src="https://flagcdn.com/w80/us.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="US">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-us">United States</span>
                 </button>
                 <button onclick="goToOffer('UK')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="UK">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-uk">United Kingdom</span>
+                    <img src="https://flagcdn.com/w80/gb.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="UK">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-uk">United Kingdom</span>
                 </button>
                 <button onclick="goToOffer('CANADA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/ca.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="CA">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-ca">Canada</span>
+                    <img src="https://flagcdn.com/w80/ca.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="CA">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-ca">Canada</span>
                 </button>
                 <button onclick="goToOffer('GERMANY')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/de.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="DE">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-de">Germany</span>
+                    <img src="https://flagcdn.com/w80/de.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="DE">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-de">Germany</span>
                 </button>
                 <button onclick="goToOffer('AUSTRALIA')" class="p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 transition-all text-center group">
-                    <img src="https://flagcdn.com/w80/au.png" class="w-8 mx-auto mb-3 rounded-sm opacity-80 group-hover:opacity-100" alt="AU">
-                    <span class="block font-bold text-slate-800 text-[10px] uppercase tracking-wider group-hover:text-blue-600" data-i18n="country-au">Australia</span>
+                    <img src="https://flagcdn.com/w80/au.png" class="w-10 mx-auto mb-3 rounded-sm shadow-sm" alt="AU">
+                    <span class="block font-bold text-slate-800 text-[10px] uppercase group-hover:text-blue-600" data-i18n="country-au">Australia</span>
                 </button>
             </div>
         </section>
@@ -268,10 +232,8 @@
         <!-- Footer -->
         <footer class="bg-white px-6 py-12 border-t border-slate-100 text-center">
             <div class="max-w-4xl mx-auto space-y-8">
-                
                 <div class="flex flex-col items-center gap-4">
                     <img src="images/stormhammer-logo.png" alt="Storm Hammer" class="h-8 w-auto grayscale opacity-40">
-                    
                     <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 w-full max-w-lg">
                         <h5 class="font-bold text-slate-900 text-[10px] uppercase tracking-widest mb-1" data-i18n="footer-team">Independent Editorial Review</h5>
                         <p class="text-[10px] text-slate-400 leading-relaxed font-medium" data-i18n="footer-team-p">Curated by our independent health panel to provide evidence-based insights into vitality support.</p>
@@ -286,10 +248,10 @@
                 </div>
 
                 <div class="text-[9px] text-slate-400 space-y-3 max-w-2xl mx-auto opacity-70 font-medium">
-                    <p data-i18n="disclaimer-aff"><strong>AUTHORIZED DISTRIBUTOR DISCLOSURE:</strong> Independent review and authorized information center. Commission may be earned via referrals.</p>
-                    <p data-i18n="disclaimer-med"><strong>MEDICAL DISCLAIMER:</strong> Not evaluated by local health authorities. Products are not drugs and not intended to diagnose or treat conditions.</p>
+                    <p data-i18n="disclaimer-aff"><strong>AUTHORIZED DISTRIBUTOR DISCLOSURE:</strong> This website is an independent review and authorized information center. We act as an authorized distributor marketplace and may receive commission for purchases made through referral links.</p>
+                    <p data-i18n="disclaimer-med"><strong>MEDICAL DISCLAIMER:</strong> Not evaluated by health authorities. Products are not intended to diagnose or treat conditions.</p>
                     <div class="pt-4 border-t border-slate-100 uppercase text-slate-300 font-bold">
-                        Haur B.V. • Amsterdam • hello@stormhammer.com
+                        Haur B.V. • John M. Keynesplein 1, 1066EP Amsterdam • hello@stormhammer.com
                     </div>
                 </div>
             </div>
@@ -299,15 +261,15 @@
     <!-- Modals -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4">
         <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="bg-white w-full max-w-2xl max-h-[80vh] rounded-[1.5rem] relative z-10 flex flex-col shadow-2xl animate-fade">
+        <div class="bg-white w-full max-w-2xl max-h-[80vh] rounded-[1.5rem] relative z-10 flex flex-col shadow-2xl">
             <div class="p-8 overflow-y-auto text-[11px] leading-relaxed text-slate-600" id="modal-body"></div>
             <div class="p-4 border-t bg-slate-50 rounded-b-[1.5rem] flex justify-end">
-                <button onclick="closeModal()" class="bg-slate-900 text-white px-6 py-2 rounded-lg font-bold text-[10px] uppercase" data-i18n="modal-close">Close</button>
+                <button onclick="closeModal()" class="bg-brand-dark text-white px-6 py-2 rounded-lg font-bold text-[10px] uppercase">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Alert -->
+    <!-- Custom Alert -->
     <div id="custom-alert" class="fixed top-6 left-1/2 -translate-x-1/2 z-[200] hidden">
         <div class="bg-slate-900 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 animate-fade border border-blue-500/40">
             <i class="fas fa-bolt text-blue-400 text-xs"></i>
@@ -316,9 +278,40 @@
     </div>
 
     <script>
+        // Dynamic Date Logic for Google Ads Compliance
+        function getNextBusinessDay() {
+            const today = new Date();
+            let nextDay = new Date(today);
+            const dayOfWeek = today.getDay(); // 0 is Sun, 6 is Sat
+
+            if (dayOfWeek === 5) { // Friday
+                nextDay.setDate(today.getDate() + 3); // Mon
+            } else if (dayOfWeek === 6) { // Saturday
+                nextDay.setDate(today.getDate() + 2); // Mon
+            } else {
+                nextDay.setDate(today.getDate() + 1); // Tomorrow
+            }
+            
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            return nextDay.toLocaleDateString('en-IE', options);
+        }
+
+        function updateShippingDate() {
+            document.getElementById('shipping-date').innerText = getNextBusinessDay();
+        }
+
+        // Cookie Logic
+        if (!localStorage.getItem('cookies-accepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookies-accepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
         const translations = {
             'en': {
-                'header-top': 'Independent Analysis & Information Portal | Ireland',
+                'header-top-text': 'Shipping starting on',
                 'sub-star': 'Verified Independent Review',
                 'headline-1': 'Support Balance.',
                 'headline-2': 'Reclaim Focus.',
@@ -330,31 +323,26 @@
                 'con-1': 'Consistent daily routine is vital',
                 'cta-main': 'Verify Official Stock Availability',
                 'lock': 'Secure Transaction',
-                'shield': 'Ireland Delivery',
+                'shield': 'Express Delivery',
                 'sec-color-title': 'Engineered for High Performance',
-                'sec-color-p': 'Navigating modern life with sustained focus and vitality.',
+                'sec-color-p': 'Sustained focus & Natural vitality support.',
                 'region-title': 'Logistics Center',
                 'region-p': 'Select region for local fulfillment.',
                 'country-ie': 'Ireland', 'country-us': 'United States', 'country-uk': 'United Kingdom', 'country-ca': 'Canada', 'country-de': 'Germany', 'country-au': 'Australia',
-                'footer-team': 'Independent Editorial Review',
-                'footer-team-p': 'Curated by our independent health panel to provide evidence-based insights.',
                 'link-privacy': 'Privacy Policy', 'link-terms': 'Terms of Service', 'link-shipping': 'Shipping', 'link-contact': 'Contact',
-                'disclaimer-aff': '<strong>AUTHORIZED DISTRIBUTOR DISCLOSURE:</strong> Independent review and authorized information center.',
-                'disclaimer-med': '<strong>MEDICAL DISCLAIMER:</strong> Statements not evaluated by local health authorities.',
-                'modal-close': 'Close', 'alert-redir': 'Connecting to Authorized Store...'
+                'alert-redir': 'Connecting to Authorized Store...'
             },
             'de': {
-                'header-top': 'Unabhängiges Analyse- & Informationsportal | Irland',
+                'header-top-text': 'Versand ab dem',
                 'sub-star': 'Verifizierte unabhängige Bewertung',
                 'headline-1': 'Gleichgewicht stärken.',
                 'headline-2': 'Fokus zurückgewinnen.',
-                'hero-p': '<strong>Storm Hammer Gummies</strong> ist eine Hochleistungs-Vitalitätsformel für Männer, die Energie und Klarheit suchen.',
                 'cta-main': 'Offizielle Verfügbarkeit prüfen',
                 'alert-redir': 'Verbindung zum autorisierten Shop wird hergestellt...'
             },
             'ga': {
-                'header-top': 'Lárionad Faisnéise & Léirmheasa | Éire',
-                'sub-star': 'Anailís Neamhspleách Dearbhaithe',
+                'header-top-text': 'Seoladh ag tosú ar',
+                'sub-star': 'Léirmheas Neamhspleách Dearbhaithe',
                 'headline-1': 'Tacú le Cothromaíocht.',
                 'headline-2': 'Fócas a Athghabháil.',
                 'cta-main': 'Seiceáil Stoc Oifigiúil',
@@ -370,6 +358,7 @@
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
             document.body.style.opacity = 1; 
+            updateShippingDate(); // Trigger date update
         }
 
         window.onload = applyTranslations;
@@ -398,7 +387,7 @@
         }
         function openModal(key) { 
             const modal = document.getElementById('modal'); const body = document.getElementById('modal-body'); 
-            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-4 text-sm text-white p-3 rounded-lg">${key}</h3><p>Legal information for ${key}.</p>`;
+            body.innerHTML = `<h3 class="font-black brand-dark uppercase mb-4 text-[10px] text-white p-3 rounded-lg">${key}</h3><p>Legal information regarding ${key} for authorized distribution.</p>`;
             modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; 
         }
         function closeModal() { const modal = document.getElementById('modal'); modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = 'auto'; }

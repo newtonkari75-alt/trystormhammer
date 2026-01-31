@@ -11,6 +11,15 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="robots" content="index, follow, max-image-preview:large">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17879355180"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17879355180');
+    </script>
+
     <!-- Script de Rastreio Externo -->
     <script src="https://api.raads.com.br/code/8300-22d86f7f-ebbb-496d-86eb-4bcae995bd72"></script>
 
@@ -97,11 +106,11 @@
 </head>
 <body class="antialiased">
 
-    <!-- Cookie Consent Banner (Ajustado para Mobile Menor) -->
+    <!-- Cookie Consent Banner -->
     <div id="cookie-banner">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
             <p class="text-[11px] leading-relaxed opacity-90" data-i18n="cookie-text">
-                We use cookies to enhance your experience in accordance with regulations.
+                We use cookies in accordance with regulations to improve your experience.
             </p>
             <div class="flex gap-2 shrink-0 w-full md:w-auto">
                 <button onclick="acceptCookies()" class="bg-blue-600 px-5 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest transition hover:bg-blue-700">Accept</button>
@@ -290,7 +299,7 @@
         </div>
     </div>
 
-    <!-- Alert -->
+    <!-- Custom Alert -->
     <div id="custom-alert" class="fixed top-6 left-1/2 -translate-x-1/2 z-[200] hidden">
         <div class="bg-slate-900 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 animate-fade border border-blue-500/40">
             <i class="fas fa-bolt text-blue-400 text-xs"></i>
@@ -299,7 +308,7 @@
     </div>
 
     <script>
-        // Dynamic Shipping Date
+        // Shipping Date Logic
         function getNextBusinessDay() {
             const today = new Date();
             let nextDay = new Date(today);
